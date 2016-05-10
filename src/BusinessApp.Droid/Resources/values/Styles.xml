@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <resources>
-  <color name="actionBarTextColor">#FFD24545</color>
   <style name="Theme.Splash" parent="android:Theme">
     <item name="android:windowBackground">@drawable/splash</item>
     <item name="android:windowNoTitle">true</item>
   </style>
   <style name="Theme.PageStyle" parent="android:Theme.Holo.Light">
-    <item name="android:icon">@color/actionBarTextColor</item>
+    <item name="android:icon">@android:color/transparent</item>
+    <item name="android:background">@color/window_background</item>
   </style>  
 </resources>
