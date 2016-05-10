@@ -11,35 +11,45 @@ namespace BusinessApp
     {
         public App()
         {
+            var navigationPage = new NavigationPage(new HomePage());
             // The root page of your application
-            MainPage = new ContentPage
-            {
-                Content = new StackLayout
-                {
-                    VerticalOptions = LayoutOptions.Center,
-                    Children = {
-                        new Label {
-                            XAlign = TextAlignment.Center,
-                            Text = "Welcome to Xamarin Forms!"
-                        }
-                    }
-                }
-            };
-        }
+            //navigationPage.BarBackgroundColor
+            //NavigationPage.SetHasNavigationBar(this, false);
+            MainPage = navigationPage;
 
-        protected override void OnStart()
-        {
-            // Handle when your app starts
-        }
+            // The root page of your application
+            //var label = new Label
+            //{
+            //    Text = "Customizing Xamarin Forms",
+            //    XAlign = TextAlignment.Center
+            //};
 
-        protected override void OnSleep()
-        {
-            // Handle when your app sleeps
-        }
+            //var stack = new StackLayout();
+            //stack.Children.Add(label);
+            //stack.VerticalOptions = LayoutOptions.Center;
+            //stack.Padding = new Thickness(10);
 
-        protected override void OnResume()
-        {
-            // Handle when your app resumes
+            //var page = new ContentPage
+            //{
+            //    Content = stack
+            //};
+
+            //Device.OnPlatform(
+            //    iOS: () =>
+            //    {
+            //        page.BackgroundImage = "back.png";
+            //        label.FontFamily = "HelveticaNeue-Thin";
+            //        label.FontSize = 20;
+            //    },
+            //    Android: () =>
+            //    {
+            //        page.BackgroundColor = Color.FromHex("#FFFFFF");
+            //        label.FontFamily = "sans-serif-condensed";
+            //        label.FontSize = Device.GetNamedSize(NamedSize.Medium, label);
+            //    }
+            //);
+
+            //MainPage = page;
         }
     }
 }

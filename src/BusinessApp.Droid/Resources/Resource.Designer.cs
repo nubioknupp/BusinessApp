@@ -2431,32 +2431,32 @@ namespace BusinessApp.Droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f080047
-			public const int abc_background_cache_hint_selector_material_dark = 2131230791;
-			
 			// aapt resource value: 0x7f080048
-			public const int abc_background_cache_hint_selector_material_light = 2131230792;
+			public const int abc_background_cache_hint_selector_material_dark = 2131230792;
 			
 			// aapt resource value: 0x7f080049
-			public const int abc_color_highlight_material = 2131230793;
+			public const int abc_background_cache_hint_selector_material_light = 2131230793;
+			
+			// aapt resource value: 0x7f08004a
+			public const int abc_color_highlight_material = 2131230794;
 			
 			// aapt resource value: 0x7f080004
 			public const int abc_input_method_navigation_guard = 2131230724;
 			
-			// aapt resource value: 0x7f08004a
-			public const int abc_primary_text_disable_only_material_dark = 2131230794;
-			
 			// aapt resource value: 0x7f08004b
-			public const int abc_primary_text_disable_only_material_light = 2131230795;
+			public const int abc_primary_text_disable_only_material_dark = 2131230795;
 			
 			// aapt resource value: 0x7f08004c
-			public const int abc_primary_text_material_dark = 2131230796;
+			public const int abc_primary_text_disable_only_material_light = 2131230796;
 			
 			// aapt resource value: 0x7f08004d
-			public const int abc_primary_text_material_light = 2131230797;
+			public const int abc_primary_text_material_dark = 2131230797;
 			
 			// aapt resource value: 0x7f08004e
-			public const int abc_search_url_text = 2131230798;
+			public const int abc_primary_text_material_light = 2131230798;
+			
+			// aapt resource value: 0x7f08004f
+			public const int abc_search_url_text = 2131230799;
 			
 			// aapt resource value: 0x7f080005
 			public const int abc_search_url_text_normal = 2131230725;
@@ -2467,17 +2467,20 @@ namespace BusinessApp.Droid
 			// aapt resource value: 0x7f080007
 			public const int abc_search_url_text_selected = 2131230727;
 			
-			// aapt resource value: 0x7f08004f
-			public const int abc_secondary_text_material_dark = 2131230799;
-			
 			// aapt resource value: 0x7f080050
-			public const int abc_secondary_text_material_light = 2131230800;
+			public const int abc_secondary_text_material_dark = 2131230800;
+			
+			// aapt resource value: 0x7f080051
+			public const int abc_secondary_text_material_light = 2131230801;
 			
 			// aapt resource value: 0x7f080008
 			public const int accent_material_dark = 2131230728;
 			
 			// aapt resource value: 0x7f080009
 			public const int accent_material_light = 2131230729;
+			
+			// aapt resource value: 0x7f080047
+			public const int actionBarTextColor = 2131230791;
 			
 			// aapt resource value: 0x7f08000a
 			public const int background_floating_material_dark = 2131230730;
@@ -2668,11 +2671,11 @@ namespace BusinessApp.Droid
 			// aapt resource value: 0x7f08003b
 			public const int switch_thumb_disabled_material_light = 2131230779;
 			
-			// aapt resource value: 0x7f080051
-			public const int switch_thumb_material_dark = 2131230801;
-			
 			// aapt resource value: 0x7f080052
-			public const int switch_thumb_material_light = 2131230802;
+			public const int switch_thumb_material_dark = 2131230802;
+			
+			// aapt resource value: 0x7f080053
+			public const int switch_thumb_material_light = 2131230803;
 			
 			// aapt resource value: 0x7f08003c
 			public const int switch_thumb_normal_material_dark = 2131230780;
@@ -3274,43 +3277,49 @@ namespace BusinessApp.Droid
 			public const int icon = 2130837590;
 			
 			// aapt resource value: 0x7f020057
-			public const int mr_ic_cast_dark = 2130837591;
+			public const int logo = 2130837591;
 			
 			// aapt resource value: 0x7f020058
-			public const int mr_ic_cast_light = 2130837592;
+			public const int mr_ic_cast_dark = 2130837592;
 			
 			// aapt resource value: 0x7f020059
-			public const int mr_ic_media_route_connecting_mono_dark = 2130837593;
+			public const int mr_ic_cast_light = 2130837593;
 			
 			// aapt resource value: 0x7f02005a
-			public const int mr_ic_media_route_connecting_mono_light = 2130837594;
+			public const int mr_ic_media_route_connecting_mono_dark = 2130837594;
 			
 			// aapt resource value: 0x7f02005b
-			public const int mr_ic_media_route_mono_dark = 2130837595;
+			public const int mr_ic_media_route_connecting_mono_light = 2130837595;
 			
 			// aapt resource value: 0x7f02005c
-			public const int mr_ic_media_route_mono_light = 2130837596;
+			public const int mr_ic_media_route_mono_dark = 2130837596;
 			
 			// aapt resource value: 0x7f02005d
-			public const int mr_ic_pause_dark = 2130837597;
+			public const int mr_ic_media_route_mono_light = 2130837597;
 			
 			// aapt resource value: 0x7f02005e
-			public const int mr_ic_pause_light = 2130837598;
+			public const int mr_ic_pause_dark = 2130837598;
 			
 			// aapt resource value: 0x7f02005f
-			public const int mr_ic_play_dark = 2130837599;
+			public const int mr_ic_pause_light = 2130837599;
 			
 			// aapt resource value: 0x7f020060
-			public const int mr_ic_play_light = 2130837600;
+			public const int mr_ic_play_dark = 2130837600;
 			
 			// aapt resource value: 0x7f020061
-			public const int mr_ic_settings_dark = 2130837601;
+			public const int mr_ic_play_light = 2130837601;
 			
 			// aapt resource value: 0x7f020062
-			public const int mr_ic_settings_light = 2130837602;
+			public const int mr_ic_settings_dark = 2130837602;
 			
 			// aapt resource value: 0x7f020063
-			public const int notification_template_icon_bg = 2130837603;
+			public const int mr_ic_settings_light = 2130837603;
+			
+			// aapt resource value: 0x7f020065
+			public const int notification_template_icon_bg = 2130837605;
+			
+			// aapt resource value: 0x7f020064
+			public const int Splash = 2130837604;
 			
 			static Drawable()
 			{
@@ -4747,6 +4756,12 @@ namespace BusinessApp.Droid
 			
 			// aapt resource value: 0x7f070001
 			public const int Theme_MediaRouter_Light = 2131165185;
+			
+			// aapt resource value: 0x7f070145
+			public const int Theme_PageStyle = 2131165509;
+			
+			// aapt resource value: 0x7f070144
+			public const int Theme_Splash = 2131165508;
 			
 			// aapt resource value: 0x7f0700ee
 			public const int ThemeOverlay_AppCompat = 2131165422;
