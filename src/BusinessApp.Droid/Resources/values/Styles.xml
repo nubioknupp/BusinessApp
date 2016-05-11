@@ -1,11 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <resources>
+  <color name="actionBarBackgroundColor">#FFD24545</color>
+  <color name="actionBarTextColor">#FFFFFF</color>
+  
   <style name="Theme.Splash" parent="android:Theme">
     <item name="android:windowBackground">@drawable/splash</item>
     <item name="android:windowNoTitle">true</item>
   </style>
-  <style name="Theme.PageStyle" parent="android:Theme.Holo.Light">
+  
+  <style name="MainTheme" parent="@android:style/Theme.Holo.Light">
     <item name="android:icon">@android:color/transparent</item>
-    <item name="android:background">@color/window_background</item>
+    <item name="android:actionBarStyle">@style/MainTheme.ActionBarStyle</item>
   </style>  
+  <style name="MainTheme.ActionBarStyle" parent="@android:style/Widget.Holo.Light.ActionBar">
+    <item name="android:titleTextStyle">@style/MainTheme.ActionBar.TitleTextStyle</item>
+    <item name="android:background">@color/actionBarBackgroundColor</item>
+  </style>  
+  <style name="MainTheme.ActionBar.TitleTextStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+    <item name="android:textColor">@color/actionBarTextColor</item>
+  </style>  
+  
 </resources>

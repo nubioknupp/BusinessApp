@@ -9,8 +9,7 @@ namespace BusinessApp.Droid
     [Activity(Label = "HiddenActivityIconDemo",
         Icon = "@drawable/icon",
         MainLauncher = false,
-        ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation,
-        Theme = "@style/Theme.PageStyle")]
+        ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : FormsApplicationActivity
     {
         protected override void OnCreate(Bundle bundle)
