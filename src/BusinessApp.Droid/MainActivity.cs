@@ -5,7 +5,6 @@ using Android.Content.PM;
 
 namespace BusinessApp.Droid
 {
-    //[Activity(Label = "BusinessApp", MainLauncher = false)]
     [Activity(Label = "HiddenActivityIconDemo",
         Icon = "@drawable/icon",
         MainLauncher = false,
