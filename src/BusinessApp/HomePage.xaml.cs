@@ -18,6 +18,7 @@ namespace BusinessApp
         async void OnAddSettingsActivated(object sender, EventArgs args)
         {
             await Navigation.PushAsync(new SettingsPage());
-        }
+        }
+
     }
 }

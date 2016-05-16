@@ -2,5 +2,26 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BusinessApp.SettingsPage" Title="Settings" BackgroundColor="White">
-  <Label Text="Teste" VerticalOptions="Center" HorizontalOptions="Center" />
+
+  <ScrollView>
+    <StackLayout Padding="10" AnchorY="50">
+      <Frame BackgroundColor="#FFD24545" Padding="20,6,6,6">
+        <Label Text="Cover Photo" VerticalOptions="Center" HorizontalOptions="Start" TextColor="#FFFFFF" FontSize="16" />
+      </Frame>
+      <Image Source="icon.png" WidthRequest="300" HeightRequest="180"/>
+
+      <Frame BackgroundColor="#FFD24545" Padding="20,6,6,6">
+        <Label Text="Profile Picture" VerticalOptions="Center" HorizontalOptions="Start" TextColor="#FFFFFF" FontSize="16" />
+      </Frame>
+
+      <Image Source="icon.png" WidthRequest="96" HeightRequest="96" VerticalOptions="Center" HorizontalOptions="Center"/>
+
+      <Frame BackgroundColor="#FFD24545" Padding="20,6,6,6" >
+        <Label Text="About" VerticalOptions="Center" HorizontalOptions="Start" TextColor="#FFFFFF" FontSize="16" />
+      </Frame>
+      <StackLayout Padding="10,6,6,6">
+        <Label Text="Name" VerticalOptions="Center" HorizontalOptions="Start" TextColor="#FFD24545" FontSize="16" />
+      </StackLayout>
+    </StackLayout>
+  </ScrollView>
 </ContentPage>
