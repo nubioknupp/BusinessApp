@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3D6B4A1B-D5C4-4231-95AB-B12143C7BFF9}</ProjectGuid>
+    <ProjectGuid>{2D34B61E-5FC9-4154-9DC8-B3E8E2976709}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BusinessApp.WinPhone</RootNamespace>

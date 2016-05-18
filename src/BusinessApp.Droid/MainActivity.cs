@@ -1,15 +1,19 @@
-﻿using Android.App;
-using Xamarin.Forms.Platform.Android;
-using Android.OS;
+﻿using System;
+
+using Android.App;
 using Android.Content.PM;
+using Android.Runtime;
+using Android.Views;
+using Android.Widget;
+using Android.OS;
 
 namespace BusinessApp.Droid
 {
-    [Activity(Label = "HiddenActivityIconDemo",
+    [Activity(Label = "BusinessApp",
         Icon = "@drawable/icon",
         MainLauncher = false,
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : FormsApplicationActivity
+    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
     {
         protected override void OnCreate(Bundle bundle)
         {
