@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
-namespace BusinessApp
+namespace BusinessApp.Views
 {
     public partial class SettingsPage : ContentPage
     {

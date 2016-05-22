@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using BusinessApp.Views;
 using Xamarin.Forms;
 
 namespace BusinessApp
@@ -11,29 +11,16 @@ namespace BusinessApp
     {
         public App()
         {
-            var navigationPage = new NavigationPage(new HomePage())
-            {
-                // put your color here
-                BarBackgroundColor = Color.FromHex("#FFD24545"),
-                BarTextColor = Color.FromHex("#FFFFFF"),
-            };
+            //var navigationPage = new NavigationPage(new HomePage())
+            //{
+            //    // put your color here
+            //    BarBackgroundColor = Color.FromHex("#FFD24545"),
+            //    BarTextColor = Color.FromHex("#FFFFFF"),
+            //};
 
-            MainPage = navigationPage;
-        }
+            //MainPage = navigationPage;
 
-        protected override void OnStart()
-        {
-            // Handle when your app starts
-        }
-
-        protected override void OnSleep()
-        {
-            // Handle when your app sleeps
-        }
-
-        protected override void OnResume()
-        {
-            // Handle when your app resumes
+            MainPage = new ProfilePage();
         }
     }
 }
