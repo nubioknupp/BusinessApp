@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using ImageCircle.Forms.Plugin.Abstractions;
+using Xamarin.Forms;
 
 namespace BusinessApp.Views
 {
@@ -10,16 +11,6 @@ namespace BusinessApp.Views
 
             var relativeLayout = new RelativeLayout {HeightRequest = 100};
 
-            DrawBackgroundImage(ref relativeLayout);
-            DrawBoxView(ref relativeLayout);
-            DrawDome(ref relativeLayout);
-            DrawProfileImage(ref relativeLayout);
-
-            Content = relativeLayout;
-        }
-
-        private static void DrawBackgroundImage(ref RelativeLayout relativeLayout)
-        {
             var backgroundImage = new Image
             {
                 Source = new FileImageSource {File = "capa.jpg"},
@@ -32,39 +23,115 @@ namespace BusinessApp.Views
                 Constraint.Constant(0),
                 Constraint.RelativeToParent(parent => parent.Width),
                 Constraint.RelativeToParent(parent => parent.Height*.5));
-        }
 
-        private static void DrawBoxView(ref RelativeLayout relativeLayout)
-        {
             var boxView = new BoxView {Color = Color.Black.MultiplyAlpha(.5)};
             relativeLayout.Children.Add(boxView,
                 Constraint.Constant(0), Constraint.Constant(0),
                 Constraint.RelativeToParent(parent => parent.Width),
                 Constraint.RelativeToParent(parent => parent.Height*.5));
-        }
 
-        //Add cúpula branca
-        private static void DrawDome(ref RelativeLayout relativeLayout)
-        {
             var dome = new Image {Aspect = Aspect.AspectFill, Source = new FileImageSource {File = "dome.png"}};
             relativeLayout.Children.Add(dome, Constraint.Constant(-10),
                 Constraint.RelativeToParent(parent => parent.Height*.5 - 50),
                 Constraint.RelativeToParent(parent => parent.Width + 10),
                 Constraint.Constant(75));
-        }
 
-        private static void DrawProfileImage(ref RelativeLayout relativeLayout)
-        {
-            var profileImage = new Image
+            var settings = new Image
             {
-                Aspect = Aspect.AspectFill,
-                Source = new FileImageSource {File = "profileImage.jpg"}
+                Source = new FileImageSource { File = "settings.png" }
             };
+
+            relativeLayout.Children.Add(settings,
+                Constraint.RelativeToParent((parent) => parent.Width * .05),
+                Constraint.RelativeToParent((parent) => (parent.Height * .48)),
+                Constraint.RelativeToParent((parent) => parent.Width * .15),
+                Constraint.RelativeToParent((parent) => parent.Width * .15));
+
+            var share = new Image
+            {
+                Source = new FileImageSource { File = "share.png" },
+                HeightRequest = 72,
+                WidthRequest = 72
+            };
+
+
+            relativeLayout.Children.Add(share,
+                Constraint.RelativeToParent((parent) => parent.Width * .95 - (parent.Width * .15)),
+                Constraint.RelativeToParent((parent) => (parent.Height * .48)),
+                Constraint.RelativeToParent((parent) => parent.Width * .15),
+                Constraint.RelativeToParent((parent) => parent.Width * .15));
+
+
+            var profileImage = new CircleImage
+            {
+                BorderColor = Color.White,
+                BorderThickness = 2,
+                Aspect = Aspect.AspectFill,
+                HorizontalOptions = LayoutOptions.Center,
+                Source = new FileImageSource { File = "profileImage.jpg" }
+            };
+
             relativeLayout.Children.Add(profileImage,
-                Constraint.RelativeToParent(parent => parent.Width/2 - profileImage.Width/2),
-                Constraint.RelativeToParent(parent => parent.Height*.25),
-                Constraint.RelativeToParent(parent => parent.Width*.5),
-                Constraint.RelativeToParent(parent => parent.Width*.5));
+                Constraint.RelativeToParent((parent) => ((parent.Width / 2) - (profileImage.Width / 2))),
+                Constraint.RelativeToParent((parent) => parent.Height * .21),
+                Constraint.RelativeToParent((parent) => parent.Width * .5),
+                Constraint.RelativeToParent((parent) => parent.Width * .5)
+            );
+
+            var details = new DetailsView();
+
+            relativeLayout.Children.Add(details, Constraint.Constant(0),
+                Constraint.RelativeToView(dome, (parent, view) => view.Y + view.Height - 20),
+                Constraint.RelativeToParent((parent) => parent.Width),
+                Constraint.Constant(120)
+            );
+
+            var summary = new BodyView();
+
+            relativeLayout.Children.Add(summary, Constraint.Constant(0),
+                Constraint.RelativeToView(details, (parent, view) => view.Y + view.Height - 20),
+                Constraint.RelativeToParent((parent) => parent.Width),
+                Constraint.RelativeToView(details, (parent, view) => {
+                    var detailsbottomY = view.Y + view.Height;
+                    return parent.Height - detailsbottomY;
+                }));
+
+            relativeLayout.Children.Add(new SocialMediaView(),
+                Constraint.Constant(0),
+                Constraint.RelativeToView(summary, (parent, view) => view.Y + view.Height),
+                Constraint.RelativeToParent((parent) => parent.Width),
+                Constraint.RelativeToView(summary, (parent, view) => parent.Height)
+                );
+
+            //relativeLayout.Children.Add(new SocialMediaView(), Constraint.Constant(0),
+            //    Constraint.RelativeToView(summary, (parent, view) => view.Y + view.Height - 20),
+            //    Constraint.RelativeToParent((parent) => parent.Width),
+            //    Constraint.Constant(1)
+            //);
+
+
+            //relativeLayout.Children.Add(new DetailsView(),
+            //    Constraint.Constant(0),
+            //    Constraint.RelativeToView(dome, (parent, view) => view.Y + view.Height + 10),
+            //    Constraint.RelativeToParent(parent => parent.Width),
+            //    Constraint.Constant(120)
+            //    );
+
+            //relativeLayout.Children.Add(
+            //    new DetailsView(),
+            //    Constraint.Constant(0),
+            //    Constraint.RelativeToView(profileImage, (parent, view) =>
+            //    {
+            //        return view.Y + view.Height;
+            //    }),
+            //    Constraint.RelativeToParent((parent) =>
+            //    {
+            //        return parent.Width;
+            //    }),
+            //    Constraint.Constant(120)
+            //    );
+
+            Content = relativeLayout;
         }
     }
 }
