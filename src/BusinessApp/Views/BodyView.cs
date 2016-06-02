@@ -19,14 +19,14 @@ namespace BusinessApp.Views
                 HeightRequest = 70
             };
 
-            var line = new BoxView
-            {
-                Color = Color.FromHex("#FFF3F3F3"),
-                WidthRequest = 100,
-                HeightRequest = 2
-            };
+            //var line = new BoxView
+            //{
+            //    Color = Color.FromHex("#FFF3F3F3"),
+            //    WidthRequest = 100,
+            //    HeightRequest = 2
+            //};
 
-            stack.Children.Add(line);
+            //stack.Children.Add(line);
 
             stack.Children.Add(summary);
 

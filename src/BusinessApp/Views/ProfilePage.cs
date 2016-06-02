@@ -72,7 +72,7 @@ namespace BusinessApp.Views
             };
 
             relativeLayout.Children.Add(profileImage,
-                Constraint.RelativeToParent((parent) => ((parent.Width / 2) - (profileImage.Width / 2))),
+                Constraint.RelativeToParent((parent) => ((parent.Width - profileImage.Width) / 2)),
                 Constraint.RelativeToParent((parent) => parent.Height * .21),
                 Constraint.RelativeToParent((parent) => parent.Width * .5),
                 Constraint.RelativeToParent((parent) => parent.Width * .5)
@@ -86,50 +86,15 @@ namespace BusinessApp.Views
                 Constraint.Constant(120)
             );
 
-            var summary = new BodyView();
+            var body = new BodyView();
 
-            relativeLayout.Children.Add(summary, Constraint.Constant(0),
+            relativeLayout.Children.Add(body, Constraint.Constant(0),
                 Constraint.RelativeToView(details, (parent, view) => view.Y + view.Height - 20),
                 Constraint.RelativeToParent((parent) => parent.Width),
                 Constraint.RelativeToView(details, (parent, view) => {
                     var detailsbottomY = view.Y + view.Height;
                     return parent.Height - detailsbottomY;
                 }));
-
-            relativeLayout.Children.Add(new SocialMediaView(),
-                Constraint.Constant(0),
-                Constraint.RelativeToView(summary, (parent, view) => view.Y + view.Height),
-                Constraint.RelativeToParent((parent) => parent.Width),
-                Constraint.RelativeToView(summary, (parent, view) => parent.Height)
-                );
-
-            //relativeLayout.Children.Add(new SocialMediaView(), Constraint.Constant(0),
-            //    Constraint.RelativeToView(summary, (parent, view) => view.Y + view.Height - 20),
-            //    Constraint.RelativeToParent((parent) => parent.Width),
-            //    Constraint.Constant(1)
-            //);
-
-
-            //relativeLayout.Children.Add(new DetailsView(),
-            //    Constraint.Constant(0),
-            //    Constraint.RelativeToView(dome, (parent, view) => view.Y + view.Height + 10),
-            //    Constraint.RelativeToParent(parent => parent.Width),
-            //    Constraint.Constant(120)
-            //    );
-
-            //relativeLayout.Children.Add(
-            //    new DetailsView(),
-            //    Constraint.Constant(0),
-            //    Constraint.RelativeToView(profileImage, (parent, view) =>
-            //    {
-            //        return view.Y + view.Height;
-            //    }),
-            //    Constraint.RelativeToParent((parent) =>
-            //    {
-            //        return parent.Width;
-            //    }),
-            //    Constraint.Constant(120)
-            //    );
 
             Content = relativeLayout;
         }
