@@ -38,7 +38,9 @@ namespace BusinessApp.Views
 
             var settings = new Image
             {
-                Source = new FileImageSource { File = "settings.png" }
+                Source = new FileImageSource { File = "settings.png" },
+                HeightRequest = 32,
+                WidthRequest = 32
             };
 
             relativeLayout.Children.Add(settings,
