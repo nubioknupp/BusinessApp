@@ -1,27 +1,22 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BusinessApp.Views.SettingsPage" Title="Settings" BackgroundColor="White">
-
-  <ScrollView>
-    <StackLayout Padding="10" AnchorY="50">
-      <Frame BackgroundColor="#FFD24545" Padding="20,6,6,6">
-        <Label Text="Cover Photo" VerticalOptions="Center" HorizontalOptions="Start" TextColor="#FFFFFF" FontSize="16" />
-      </Frame>
-      <Image Source="icon.png" WidthRequest="300" HeightRequest="180"/>
-
-      <Frame BackgroundColor="#FFD24545" Padding="20,6,6,6">
-        <Label Text="Profile Picture" VerticalOptions="Center" HorizontalOptions="Start" TextColor="#FFFFFF" FontSize="16" />
-      </Frame>
-
-      <Image Source="icon.png" WidthRequest="96" HeightRequest="96" VerticalOptions="Center" HorizontalOptions="Center"/>
-
-      <Frame BackgroundColor="#FFD24545" Padding="20,6,6,6" >
-        <Label Text="About" VerticalOptions="Center" HorizontalOptions="Start" TextColor="#FFFFFF" FontSize="16" />
-      </Frame>
-      <StackLayout Padding="10,6,6,6">
-        <Label Text="Name" VerticalOptions="Center" HorizontalOptions="Start" TextColor="#FFD24545" FontSize="16" />
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="BusinessApp.Views.SettingsPage" BackgroundColor="#FFD24545">
+  <ContentPage.Content>
+    <StackLayout Padding="30" Spacing="30" >
+      
+      <StackLayout Padding="10" HorizontalOptions="Center" VerticalOptions="Center">
+        <Label TextColor="White" FontSize="20">Gerenciar o Perfil</Label>
       </StackLayout>
+      
+      <StackLayout Padding="10,0,10,10">
+        <Entry x:Name="Name" Placeholder="Nome" PlaceholderColor="White"/>
+        <Entry x:Name="Profession" Placeholder="Profissão" PlaceholderColor="White"/>
+        <Entry x:Name="Where" Placeholder="De Onde" PlaceholderColor="White" />
+        <Editor x:Name="Summary" Text="Resumo" Focused="Summary_OnFocused" Unfocused="Summary_OnUnfocused" HeightRequest="72"/>
+      </StackLayout>
+
+      <Button x:Name="Save" Text="Salvar" Clicked="SaveClicked" BackgroundColor="White" TextColor="#FFD24545"/>
     </StackLayout>
-  </ScrollView>
+  </ContentPage.Content>
 </ContentPage>

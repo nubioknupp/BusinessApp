@@ -43,6 +43,11 @@ namespace BusinessApp.Views
                 WidthRequest = 32
             };
 
+            settings.GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(NavigationSettings),
+            });
+
             relativeLayout.Children.Add(settings,
                 Constraint.RelativeToParent((parent) => parent.Width * .05),
                 Constraint.RelativeToParent((parent) => (parent.Height * .48)),
@@ -99,6 +104,15 @@ namespace BusinessApp.Views
                 }));
 
             Content = relativeLayout;
+        }
+
+        private async void NavigationSettings()
+        {
+            await Navigation.PushModalAsync(new NavigationPage(new SettingsPage())
+            {
+                BarBackgroundColor = Color.FromHex("#FFD24545"),
+                BarTextColor = Color.FromHex("#FFFFFF")
+            });
         }
     }
 }
