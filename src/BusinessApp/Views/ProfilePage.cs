@@ -1,4 +1,6 @@
-﻿using ImageCircle.Forms.Plugin.Abstractions;
+﻿using BusinessApp.Dao;
+using BusinessApp.Model;
+using ImageCircle.Forms.Plugin.Abstractions;
 using Xamarin.Forms;
 
 namespace BusinessApp.Views
@@ -7,8 +9,10 @@ namespace BusinessApp.Views
     {
         public ProfilePage()
         {
+            NavigationPage.SetHasNavigationBar(this, false);
             BackgroundColor = Color.White;
 
+            Profile profile;
             var relativeLayout = new RelativeLayout {HeightRequest = 100};
 
             var backgroundImage = new Image
@@ -60,8 +64,7 @@ namespace BusinessApp.Views
                 HeightRequest = 72,
                 WidthRequest = 72
             };
-
-
+            
             relativeLayout.Children.Add(share,
                 Constraint.RelativeToParent((parent) => parent.Width * .95 - (parent.Width * .15)),
                 Constraint.RelativeToParent((parent) => (parent.Height * .48)),
@@ -75,7 +78,7 @@ namespace BusinessApp.Views
                 BorderThickness = 2,
                 Aspect = Aspect.AspectFill,
                 HorizontalOptions = LayoutOptions.Center,
-                Source = new FileImageSource { File = "profileImage.jpg" }
+                Source = new FileImageSource { File = "profileImage.jpg" },
             };
 
             relativeLayout.Children.Add(profileImage,
@@ -85,7 +88,9 @@ namespace BusinessApp.Views
                 Constraint.RelativeToParent((parent) => parent.Width * .5)
             );
 
-            var details = new DetailsView();
+            using (var db = new DbContext()) { profile = db.FillById(1); }
+
+            var details = new DetailsView(profile);
 
             relativeLayout.Children.Add(details, Constraint.Constant(0),
                 Constraint.RelativeToView(dome, (parent, view) => view.Y + view.Height - 20),
@@ -93,7 +98,7 @@ namespace BusinessApp.Views
                 Constraint.Constant(120)
             );
 
-            var body = new BodyView();
+            var body = new BodyView(profile);
 
             relativeLayout.Children.Add(body, Constraint.Constant(0),
                 Constraint.RelativeToView(details, (parent, view) => view.Y + view.Height - 20),

@@ -1,14 +1,15 @@
-﻿using Xamarin.Forms;
+﻿using BusinessApp.Model;
+using Xamarin.Forms;
 
 namespace BusinessApp.Views
 {
     public class DetailsView : ContentView
     {
-        public DetailsView()
+        public DetailsView(Profile profile)
         {
             var name = new Label()
             {
-                Text = "Nubio Knupp",
+                Text = profile.Name,
                 FontSize = 22,
                 FontFamily = Device.OnPlatform("HelveticaNeue-Bold", "sans-serif-black", "Segoe UI Black"),
                 HorizontalTextAlignment = TextAlignment.Center,
@@ -17,7 +18,7 @@ namespace BusinessApp.Views
 
             var profession = new Label()
             {
-                Text = "Software Engineer",
+                Text = profile.Profession,
                 FontSize = 14,
                 FontFamily = Device.OnPlatform("HelveticaNeue", "sans-serif", "Segoe UI"),
                 HorizontalTextAlignment = TextAlignment.Center,
@@ -26,7 +27,7 @@ namespace BusinessApp.Views
 
             var where = new Label()
             {
-                Text = "Juiz de Fora, Brasil",
+                Text = profile.Where,
                 FontSize = 12,
                 FontFamily = Device.OnPlatform("HelveticaNeue-Light", "sans-serif-light", "Segoe UI Light"),
                 HorizontalTextAlignment = TextAlignment.Center,

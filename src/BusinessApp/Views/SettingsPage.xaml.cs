@@ -15,6 +15,15 @@ namespace BusinessApp.Views
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
+            Profile profile;
+
+            using (var db = new DbContext()){ profile = db.FillById(1);}
+
+            Name.Text = profile.Name;
+            Profession.Text = profile.Profession;
+            Where.Text = profile.Where;
+            Summary.Text = profile.Summary;
+
         }
 
         private void SaveClicked(object sender, EventArgs e)
@@ -32,7 +41,12 @@ namespace BusinessApp.Views
             {
                 db.InsertOrUpdate(profile);
             }
-            //Navigation.
+            NavigationProfile();
+        }
+
+        private void NavigationProfile()
+        {
+            Application.Current.MainPage = new NavigationPage(new ProfilePage());
         }
 
         private void Summary_OnFocused(object sender, EventArgs e)
